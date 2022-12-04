@@ -5,19 +5,18 @@ function getFetch(){
   const choice = document.querySelector('input').value
   console.log(choice)
 
-  const url = `https://api.nasa.gov/planetary/apod?api_key=zU71SV2z8UAS2tpSRxtx9Ii4giGUAk6QIufK4bCn&date=${choice}`
+  const url = `https://api.edamam.com/api/nutrition-data?app_id=dce92992&app_key=23f9c8ca425a2a1e4126336deea3a0ae&nutrition-type=logging&ingr=${choice}`
+
+
 
   fetch(url)
       .then(res => res.json()) // parse response as JSON
       .then(data => {
         console.log(data)
-        if( data.media_type === 'image' ){
-          document.querySelector('img').src = data.hdurl
-        }else if(data.media_type === 'video'){
-          document.querySelector('iframe').src = data.url
-        }
+        console.log(data.totalNutrients.CA.quantity)
        
-        document.querySelector('h3').innerText = data.explanation
+        document.querySelector('h3').innerText = data.calories
+        document.querySelector('.calcium').innerText = data.totalNutrients.CA.quantity
       })
       .catch(err => {
           console.log(`error ${err}`)
