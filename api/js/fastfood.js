@@ -52,6 +52,7 @@ const createCard = (foodItem) => {
             <div class="col-lg-6">
               <div class="p-d mt-4">
                     <h3 class="card-title">${foodItem.food.label}</h3>
+                    <p class="card-text">Brand: ${foodItem.food.brand}</p>
                     <p class="card-text">Serving Size: ${foodItem.food.servingSizes[0].quantity} ${foodItem.food.servingSizes[0].label}</p>
                     <p class="card-text">Calories (kcal): ${foodItem.food.nutrients.ENERC_KCAL}</p>
                     <p class="card-text">Total Fat (g): ${foodItem.food.nutrients.FAT}</p>
