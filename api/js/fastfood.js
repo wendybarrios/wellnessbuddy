@@ -13,6 +13,12 @@ function fastFood(){
       .then(res => res.json()) // parse response as JSON
       .then(data => {
         console.log(data)
+        console.log(data.hints[0].food.knownAs)
+
+        // name of item ex. bacon biscuit
+        document.querySelector('.itemlabel').innerText = data.hints[0].food.knownAs
+
+
         
       })
       .catch(err => {
