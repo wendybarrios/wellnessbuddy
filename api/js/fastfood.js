@@ -52,11 +52,12 @@ const createCard = (foodItem) => {
             <div class="col-lg-6">
               <div class="p-d mt-4">
                     <h3 class="card-title">${foodItem.food.label}</h3>
+                    <p class="card-text">Serving Size: ${foodItem.food.servingSizes[0].quantity} ${foodItem.food.servingSizes[0].label}</p>
                     <p class="card-text">Calories (kcal): ${foodItem.food.nutrients.ENERC_KCAL}</p>
                     <p class="card-text">Total Fat (g): ${foodItem.food.nutrients.FAT}</p>
-                    <p class="card-text">Carbohydrate (g): ${foodItem.food.label.CHOCDF}</p>
-                    <p class="card-text">Total Fiber (g): ${foodItem.food.label.FIBTG}</p>
-                    <p class="card-text">Total Protein (g): ${foodItem.food.label.PROCNT}</p>
+                    <p class="card-text">Total Carbohydrate (g): ${foodItem.food.nutrients.CHOCDF}</p>
+                    <p class="card-text">Total Fiber (g): ${foodItem.food.nutrients.FIBTG}</p>
+                    <p class="card-text">Total Protein (g): ${foodItem.food.nutrients.PROCNT}</p>
                     <div class="collapse-content">
                       <h5>Nutrients:</h5>
                       <p id="collapseContentPara-${
