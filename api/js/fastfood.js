@@ -16,13 +16,71 @@ function fastFood(){
         console.log(data.hints[0].food.knownAs)
 
         // name of item ex. bacon biscuit
-        document.querySelector('.itemlabel').innerText = data.hints[0].food.knownAs
+        // document.querySelector('.itemlabel').innerText = data.hints[0].food.knownAs
+
+      //   let labels = "";
+      // for(let i=0;i<data.hints.length;i++){
+      //     labels = labels+ "\n"+data.hints[i].food.label;
+      //   }
+      //  document.querySelector('.foods').innerText = labels;
+
+      
+      for(let i=0;i<data.hints.length;i++){
+            createCard(data.hints[i])
+          }
+      
+       
 
 
-        
+       
+
       })
       .catch(err => {
           console.log(`error ${err}`)
       });
 }
 
+
+ // Start of creating the Nasa Cards
+const createCard = (foodItem) => {
+  document.querySelector("#foodInfo1").insertAdjacentHTML(
+    "beforeend",
+    `
+    <section class="container4 my-5">
+    <div class="row g-3">
+      
+            <div class="col-lg-6">
+              <div class="p-d mt-4">
+                    <h3 class="card-title">${foodItem.food.label}</h3>
+                    <p class="card-text">Calories (kcal): ${foodItem.food.nutrients.ENERC_KCAL}</p>
+                    <p class="card-text">Total Fat (g): ${foodItem.food.nutrients.FAT}</p>
+                    <p class="card-text">Carbohydrate (g): ${foodItem.food.label.CHOCDF}</p>
+                    <p class="card-text">Total Fiber (g): ${foodItem.food.label.FIBTG}</p>
+                    <p class="card-text">Total Protein (g): ${foodItem.food.label.PROCNT}</p>
+                    <div class="collapse-content">
+                      <h5>Nutrients:</h5>
+                      <p id="collapseContentPara-${
+                        foodItem.food.label
+                      }""  class="card-text collapse.show readMorePara readMorePara-${
+                        foodItem.food.label
+    } hiddenPara">${foodItem.food.label}</p>
+
+                    <div class="d-flex justify-content-between">
+                      <a id="collapseContentBTN-${
+                        foodItem.food.label
+                      }" class="btn btn-dark readBtn" data-toggle="collapse" href="#collapseContent" role="button" aria-expanded="false" aria-controls="collapseExample"><span class="readSpan readSpan-${
+                        foodItem.food.label
+    }">Read More</span></a>
+                    <div>
+                        
+                  
+                    </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   </section>`
+  )
+                  }
