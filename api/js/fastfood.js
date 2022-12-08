@@ -1,12 +1,14 @@
 
-document.querySelector('#fastFood').addEventListener('click', fastFood)
+document.querySelector('#fastFoodButton').addEventListener('click', fastFood)
+
+
 
 function fastFood(){
+  document.querySelector('#foodInfo1').innerHTML = ''
+
   const fastFoodInput = document.querySelector('#searchfastfood').value
 
-  const url = `https://api.edamam.com/api/food-database/v2/parser?app_id=f6c373d1&app_key=080b801c47c82649cb4cb9c2621280d6&ingr=${fastFoodInput}&nutrition-type=cooking&category=fast-foods
-  `
-
+  const url = `https://api.edamam.com/api/food-database/v2/parser?app_id=f6c373d1&app_key=080b801c47c82649cb4cb9c2621280d6&ingr=${fastFoodInput}&nutrition-type=cooking&category=fast-foods`
 
 
   fetch(url)
@@ -28,11 +30,7 @@ function fastFood(){
       for(let i=0;i<data.hints.length;i++){
             createCard(data.hints[i])
           }
-      
-       
 
-
-       
 
       })
       .catch(err => {
@@ -59,30 +57,46 @@ const createCard = (foodItem) => {
                     <p class="card-text">Total Carbohydrate (g): ${Math.round(foodItem.food.nutrients.CHOCDF)}</p>
                     <p class="card-text">Total Fiber (g): ${Math.round(foodItem.food.nutrients.FIBTG)}</p>
                     <p class="card-text">Total Protein (g): ${Math.round(foodItem.food.nutrients.PROCNT)}</p>
-                    <div class="collapse-content">
-                      <h5>Nutrients:</h5>
-                      <p id="collapseContentPara-${
-                        foodItem.food.label
-                      }""  class="card-text collapse.show readMorePara readMorePara-${
-                        foodItem.food.label
-    } hiddenPara">${foodItem.food.label}</p>
-
-                    <div class="d-flex justify-content-between">
-                      <a id="collapseContentBTN-${
-                        foodItem.food.label
-                      }" class="btn btn-dark readBtn" data-toggle="collapse" href="#collapseContent" role="button" aria-expanded="false" aria-controls="collapseExample"><span class="readSpan readSpan-${
-                        foodItem.food.label
-    }">Read More</span></a>
-                    <div>
-                        
-                  
+                    
+                    <i id="heartBTN-${foodItem.food.label}" class="fas fa-heart hidden heart fa-lg p-1 my-1 mr-3" tabindex="0" aria-label="like content" title="I like it"><span class="likeSpan likeSpan${foodItem.food.label}">Like Me</span></i>
                     </div>
                     </div>
                   </div>
                 </div>
             </div>
-        </div>
+        
     </div>
-   </section>`
+   </section>
+   
+   
+   <section id="gallery">
+  <div class="container">
+    <div class="row">
+    <div class="col-lg-4 mb-4">
+    <div class="card">
+      <div class="card-body">
+      <h3 class="card-title">${foodItem.food.label}</h3>
+      <p class="card-text">Brand: ${foodItem.food.brand}</p>
+      <p class="card-text">Serving Size: ${foodItem.food.servingSizes[0].quantity} ${foodItem.food.servingSizes[0].label}</p>
+      <p class="card-text">Calories (kcal): ${Math.round(foodItem.food.nutrients.ENERC_KCAL)}</p>
+      <p class="card-text">Total Fat (g): ${Math.round(foodItem.food.nutrients.FAT)}</p>
+      <p class="card-text">Total Carbohydrate (g): ${Math.round(foodItem.food.nutrients.CHOCDF)}</p>
+      <p class="card-text">Total Fiber (g): ${Math.round(foodItem.food.nutrients.FIBTG)}</p>
+      <p class="card-text">Total Protein (g): ${Math.round(foodItem.food.nutrients.PROCNT)}</p>
+      
+      <i id="heartBTN-${foodItem.food.label}" class="fas fa-heart hidden heart fa-lg p-1 my-1 mr-3" tabindex="0" aria-label="like content" title="I like it"><span class="likeSpan likeSpan${foodItem.food.label}">Like Me</span></i>
+      </div>
+     </div>
+    
+  </div>
+</div>
+</section>
+
+`
+   
   )
-                  }
+   
+// End of Food Card
+
+  }
+
