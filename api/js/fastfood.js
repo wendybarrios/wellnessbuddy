@@ -12,7 +12,7 @@ function clearField() {
 function fastFood(){
   document.querySelector('#foodInfo1').innerHTML = ''
 
-
+// grab user input value
   const fastFoodInput = document.querySelector('#searchfastfood').value
 
   const url = `https://api.edamam.com/api/food-database/v2/parser?app_id=f6c373d1&app_key=080b801c47c82649cb4cb9c2621280d6&ingr=${fastFoodInput}&nutrition-type=cooking&category=fast-foods`
