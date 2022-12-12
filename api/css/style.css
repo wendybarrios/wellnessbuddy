@@ -97,6 +97,9 @@ span {
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+/*
+ * Base structure
+ */
 #body {
   height: 100%;
   background-color:  #D5E3F0;
@@ -115,11 +118,6 @@ span {
  * Base structure
  */
 
- html,
- body {
-   height: 100%;
-  background-color: #D5E3F0;
- }
 
 
 /*
