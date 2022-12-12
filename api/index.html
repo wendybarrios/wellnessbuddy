@@ -17,11 +17,45 @@
 		<!-- external CSS link -->
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/style.css">
+
+		 <!-- Bootstrap core CSS -->
+		 <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
 		
 	</head>
-	<body>
+	<body class="text-center">
+		
 
-		<h1>Picture Of The Day</h1>
+			<div id="body" class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+			  <header class="masthead mb-auto">
+				<div class="inner">
+				  <h3 class="masthead-brand">Cover</h3>
+				  <nav class="nav nav-masthead justify-content-center">
+					<a class="nav-link active" href="#">Home</a>
+					<a class="nav-link" href="api/ingredients.html">By Ingredients</a>
+					<a class="nav-link" href="#">By Restaurant</a>
+				  </nav>
+				</div>
+			  </header>
+		
+			  <main role="main" class="inner cover">
+				<h1 class="cover-heading">WellnessBuddy</h1>
+				<p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+				<p class="lead">
+				  <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
+				</p>
+			  </main>
+		
+			  <footer class="mastfoot mt-auto">
+				<div class="inner">
+				  <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+				</div>
+			  </footer>
+			</div>
+
+			
+			
+
+		<h1>Search by Ingredient</h1>
 		<!-- <input type="date" name="" value="">
 		<button type="button" name="button">Get Media</button>  -->
 
@@ -44,7 +78,7 @@
 		<h3 class="cholesterol"></h3>
 
 
-
+		<h1>Search by Restaurant</h1>
 		<input id="searchfastfood" name="" value="">
 		<button id="fastFoodButton" name="button">Search Fast Foods!</button>
 		<h2>Item 1:</h2>
@@ -57,5 +91,10 @@
 		  <script src="https://kit.fontawesome.com/618ab13cb7.js" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="js/main.js"></script>
 		<script type="text/javascript" src="js/fastfood.js"></script>
+
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+		<script src="../../../../assets/js/vendor/popper.min.js"></script>
+		<script src="../../../../dist/js/bootstrap.min.js"></script>
 	</body>
 </html>
