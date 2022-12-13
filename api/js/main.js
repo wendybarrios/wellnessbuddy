@@ -15,7 +15,7 @@ function getFetch(){
         console.log(data)
         console.log(data.totalNutrients.CA.quantity)
        
-        document.querySelector('h3').innerText = data.calories
+        document.querySelector('.calories').innerText = data.calories
         document.querySelector('.calcium').innerText = data.totalNutrients.CA.quantity 
         document.querySelector('.carbohydrates').innerText = data.totalNutrients.CHOCDF.quantity
         document.querySelector('.cholesterol').innerText = data.totalNutrients.CHOLE.quantity
