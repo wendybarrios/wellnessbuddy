@@ -69,7 +69,13 @@ const createCard = (foodItem) => {
                    <p class="card-text">Total Fiber (g): ${Math.round(foodItem.food.nutrients.FIBTG)}</p>
                    <p class="card-text">Total Protein (g): ${Math.round(foodItem.food.nutrients.PROCNT)}</p>
                    
-                   <i id="heartBTN-${foodItem.food.label}" class="fas fa-heart hidden heart fa-lg p-1 my-1 mr-3" tabindex="0" aria-label="like content" title="I like it"><span class="likeSpan likeSpan${foodItem.food.label}">Like Me</span></i>
+                   <div>
+                        <i id="heartBTN-${
+                          foodItem.food.label
+                        }" class="fas fa-heart hidden heart fa-lg p-1 my-1 mr-3" tabindex="0" aria-label="like content" title="I like it"><span class="likeSpan likeSpan${
+                          foodItem.food.label
+    }">Like Me</span></i>
+    </div>
                    </div>
                    </div>
                  </div>
@@ -86,8 +92,9 @@ const createCard = (foodItem) => {
   )
 // End of Food Card
 
+
+
+  
+
   }
-
-
-
 
