@@ -2,6 +2,7 @@
 document.querySelector('button').addEventListener('click', getFetch)
 
 function getFetch(){
+  document.querySelector('#cards-container').innerHTML = ''
   const choice = document.querySelector('#searchIngredient').value
   console.log(choice)
 
@@ -20,7 +21,7 @@ function getFetch(){
         // document.querySelector('.cholesterol').innerText = data.totalNutrients.CHOLE.quantity
 
       let item = data.ingredients[0].text
-      let calories = data.calories
+      let calories = Math.round(data.totalNutrients.ENERC_KCAL.quantity) + " " + data.totalNutrients.ENERC_KCAL.unit
       let calcium = Math.round(data.totalNutrients.CA.quantity) + " " + data.totalNutrients.CA.unit
       let carbs = Math.round(data.totalNutrients.CHOCDF.quantity) + " " + data.totalNutrients.CHOCDF.unit
       let cholesterol = Math.round(data.totalNutrients.CHOLE.quantity) + " " + data.totalNutrients.CHOLE.unit
@@ -33,7 +34,7 @@ function getFetch(){
 
        //create container
        let cardContainer = document.createElement('div')
-       cardContainer.classList.add('card')
+       cardContainer.classList.add('card', 'border-dark')
        cardContainer.style.width="18rem"
        document.querySelector('#cards-container').appendChild(cardContainer)
 
@@ -48,11 +49,7 @@ function getFetch(){
        cardBody.innerText = `${item} `
        cardContainer.appendChild(cardTitle)
 
-        //create h5
-        // let cardText = document.createElement('p')
-        // cardText.classList.add('card-text')
-        // cardBody.innerText = `Calories: ${calories} `
-        // cardContainer.appendChild(cardText)
+      
 
        //create ul 
        let cardList = document.createElement('ul')
