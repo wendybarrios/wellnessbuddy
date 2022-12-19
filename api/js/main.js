@@ -20,7 +20,12 @@ function getFetch(){
         // document.querySelector('.carbohydrates').innerText = data.totalNutrients.CHOCDF.quantity
         // document.querySelector('.cholesterol').innerText = data.totalNutrients.CHOLE.quantity
 
+      // get item
       let item = data.ingredients[0].text
+      // change item case : ex. milk -> Milk
+      let cardLabel = item.charAt(0).toUpperCase() + item.slice(1)
+
+      // get nutrition facts
       let calories = Math.round(data.totalNutrients.ENERC_KCAL.quantity) + " " + data.totalNutrients.ENERC_KCAL.unit
       let calcium = Math.round(data.totalNutrients.CA.quantity) + " " + data.totalNutrients.CA.unit
       let carbs = Math.round(data.totalNutrients.CHOCDF.quantity) + " " + data.totalNutrients.CHOCDF.unit
@@ -44,9 +49,9 @@ function getFetch(){
        cardContainer.appendChild(cardBody)
 
        //create h5
-       let cardTitle = document.createElement('h5')
+       let cardTitle = document.createElement('h2')
        cardTitle.classList.add('card-title')
-       cardBody.innerText = `${item} `
+       cardBody.innerText = `${cardLabel}`
        cardContainer.appendChild(cardTitle)
 
       
