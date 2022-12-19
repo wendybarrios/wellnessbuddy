@@ -21,18 +21,21 @@ function getFetch(){
 
       let item = data.ingredients[0].text
       let calories = data.calories
-      let calcium = data.totalNutrients.CA.quantity 
-      let carbs = data.totalNutrients.CHOCDF.quantity
-      let cholesterol = data.totalNutrients.CHOLE.quantity
-      let fiber = data.totalNutrients.FIBTG.quantity
-      let potassium = data.totalNutrients.K.quantity
-      let magnesium = data.totalNutrients.MG.quantity
+      let calcium = Math.round(data.totalNutrients.CA.quantity) + " " + data.totalNutrients.CA.unit
+      let carbs = Math.round(data.totalNutrients.CHOCDF.quantity) + " " + data.totalNutrients.CHOCDF.unit
+      let cholesterol = Math.round(data.totalNutrients.CHOLE.quantity) + " " + data.totalNutrients.CHOLE.unit
+      let fiber = data.totalNutrients.FIBTG.quantity + " " + data.totalNutrients.FIBTG.unit
+      let potassium = Math.round(data.totalNutrients.K.quantity) + " " + data.totalNutrients.K.unit
+      let magnesium = Math.round(data.totalNutrients.MG.quantity) + " " + data.totalNutrients.MG.unit
+      let sodium = Math.round(data.totalNutrients.NA.quantity) + " " + data.totalNutrients.NA.unit
+      let protein = Math.round(data.totalNutrients.PROCNT.quantity) + " " + data.totalNutrients.PROCNT.unit
+      let sugar = Math.round(data.totalNutrients.SUGAR.quantity) + " " + data.totalNutrients.SUGAR.unit
 
        //create container
        let cardContainer = document.createElement('div')
        cardContainer.classList.add('card')
        cardContainer.style.width="18rem"
-       document.querySelector('#cards-container').appendChild(cardContainer)//apend goes last
+       document.querySelector('#cards-container').appendChild(cardContainer)
 
        //create div card-body
        let cardBody = document.createElement('div')
@@ -76,7 +79,7 @@ function getFetch(){
         cardContainer.appendChild(cardListItemThree)
 
         // create cholesterol values
-  let cardListItemFour = document.createElement('li')
+        let cardListItemFour = document.createElement('li')
         cardListItemFour.classList.add('list-group-item')
         cardListItemFour.innerText = `Cholesterol: ${cholesterol}`
         cardContainer.appendChild(cardListItemFour)
@@ -98,6 +101,25 @@ function getFetch(){
          cardListItemSeven.classList.add('list-group-item')
          cardListItemSeven.innerText = `Magnesium: ${magnesium}`
          cardContainer.appendChild(cardListItemSeven)
+
+         // create potassium values
+         let cardListItemEight = document.createElement('li')
+         cardListItemEight.classList.add('list-group-item')
+         cardListItemEight.innerText = `Sodium: ${sodium}`
+         cardContainer.appendChild(cardListItemEight)
+
+          // create protein values
+          let cardListItemNine = document.createElement('li')
+          cardListItemNine.classList.add('list-group-item')
+          cardListItemNine.innerText = `Protein: ${protein}`
+          cardContainer.appendChild(cardListItemNine)
+ 
+           // create sugar values
+           let cardListItemTen = document.createElement('li')
+           cardListItemTen.classList.add('list-group-item')
+           cardListItemTen.innerText = `Sugar: ${sugar}`
+           cardContainer.appendChild(cardListItemTen)
+  
 
 
          
