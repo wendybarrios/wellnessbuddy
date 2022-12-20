@@ -240,3 +240,9 @@ height: 600px;
    background: #0276FD;
 
   }
+
+  #mainHeading{
+    text-decoration: none;
+    color: white;
+    margin-top: 5px;
+  }
