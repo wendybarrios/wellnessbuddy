@@ -8,7 +8,10 @@
 
 **Tech used:** HTML, CSS, JavaScript, 
 
-As someone who is generally health conscious, I wanted to create an easy-to-access hub to display nutritional information about different ingredients and food items in fastfood restaurants. Nutrition facts are generated from the Edamam Food API where you can see approximate values for vitamins, protein and more.
+I wanted to create an easy-to-access hub to display nutritional information about different ingredients and food items in fastfood restaurants. Nutrition facts are generated from the Edamam Food API where you can see approximate values for vitamins, protein and more.
+
+<img width="1210" alt="Screen Shot 2023-01-10 at 11 32 51 AM" src="https://user-images.githubusercontent.com/102558203/211644569-66cac295-783b-4ef3-853e-144c9dd36bcb.png">
+
 
 
 
